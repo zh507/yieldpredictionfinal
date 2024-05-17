@@ -1,0 +1,140 @@
+body {
+    font-family: "Open Sans", sans-serif, Times;
+    background-color: #e0f7fa; /* Light blue background */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #80deea; /* Light blue container background */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #000; /* Black text color */
+}
+
+h1 {
+    text-align: center;
+    color: #004d40; /* Darker blue text color */
+}
+
+.form-container {
+    background-color: #b2ebf2; /* Slightly lighter blue */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #004d40; /* Darker blue text color */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #004d40; /* Darker blue border */
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn-predict {
+    width: 100%;
+    padding: 10px; /* Smaller padding for the button */
+    background-color: #00796b; /* Darker blue button background */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-predict:hover {
+    background-color: #004d40; /* Darker blue on hover */
+}
+
+/* Existing styles from your stylesheet.css */
+#wrapper {
+    width: 100%;
+    background-color: #FFF;
+}
+
+#wrap {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+/* "auto" makes the left and right margins center the wrapper */
+.main-head {
+    grid-area: header;
+}
+
+.content {
+    grid-area: content;
+}
+
+.main-nav {
+    grid-area: nav;
+}
+
+.side {
+    grid-area: sidebar;
+}
+
+.main-footer {
+    grid-area: footer;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+        "header"
+        "nav"
+        "content"
+        "sidebar"
+        "footer";
+}
+
+@media (min-width: 500px) {
+    .wrapper {
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas:
+            "header  header"
+            "nav     nav"
+            "sidebar content"
+            "footer      footer";
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 700px) {
+    .wrapper {
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-areas:
+            "header header  header"
+            "nav    content sidebar"
+            "nav    content footer"
+            "footer footer  footer";
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+}
